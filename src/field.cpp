@@ -1802,9 +1802,8 @@ void map::player_in_field( player &u )
                 break;
 
             case fd_fire:
-                if( u.has_active_bionic( bionic_id( "bio_heatsink" ) ) || u.is_wearing( "rm13_armor_on" ) ||
-                    u.has_trait( trait_M_SKIN2 ) ) {
-                    //heatsink, suit, or internal restructuring prevents ALL fire damage.
+                if( u.has_active_bionic( bionic_id( "bio_heatsink" ) ) || u.is_wearing( "rm13_armor_on" ) ) {
+                    //heatsink and suit prevents ALL fire damage.
                     break;
                 }
                 //Burn the player. Less so if you are in a car or ON a car.
