@@ -1747,6 +1747,12 @@ void activity_handlers::reload_finish( player_activity *act, player *p )
     item &reloadable = *act->targets[ 0 ];
     int qty = act->index;
     bool is_speedloader = act->targets[ 1 ]->has_flag( "SPEEDLOADER" );
+    bool is_carbattery = act->targets[ 1 ]->ammo_current( ) == "battery" &&
+                         act->targets[ 1 ]->is_magazine();
+    if( is_carbattery ) {
+        act->targets[ 1 ]->set_flag( "BATTERY_MOD_INSTALLED" );
+    }
+
 
     if( !reloadable.reload( *p, std::move( act->targets[ 1 ] ), qty ) ) {
         add_msg( m_info, _( "Can't reload the %s." ), reloadable.tname().c_str() );
@@ -2871,6 +2877,10 @@ void activity_handlers::unload_mag_finish( player_activity *act, player *p )
         act->targets[ 0 ].remove_item();
     }
 
+    if( act->targets[ 1 ]->has_flag( "BATTERY_MOD_INSTALLED" ) ) {
+        act->targets[ 1 ]->unset_flag( "BATTERY_MOD_INSTALLED" );
+    }
+    
     act->set_to_null();
 }
 
