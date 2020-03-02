@@ -1379,24 +1379,7 @@ bool monster::move_to( const tripoint &p, bool force, const float stagger_adjust
     const bool flies = has_flag( MF_FLIES );
     const bool on_ground = !digs && !flies;
     const bool climbs = has_flag( MF_CLIMBS ) && g->m.has_flag( TFLAG_NO_FLOOR, p );
-
-    const bool z_move = p.z != pos().z;
-    const bool going_up = p.z > pos().z;
-
-    tripoint destination = p;
-
-    // This is stair teleportation hackery.
-    // @TODO: Remove this in favor of stair alignment
-    if( going_up ) {
-        if( g->m.has_flag( TFLAG_GOES_UP, pos() ) ) {
-            destination = find_closest_stair( p, TFLAG_GOES_DOWN );
-        }
-    } else if( z_move ) {
-        if( g->m.has_flag( TFLAG_GOES_DOWN, pos() ) ) {
-            destination = find_closest_stair( p, TFLAG_GOES_UP );
-        }
-    }
-
+    tripoint destination = get_stairs_teleport_point ( p );
     // Allows climbing monsters to move on terrain with movecost <= 0
     Creature *critter = g->critter_at( destination, is_hallucination() );
     if( g->m.has_flag( "CLIMBABLE", destination ) ) {
@@ -1709,15 +1692,36 @@ bool monster::push_to( const tripoint &p, const int boost, const size_t depth )
     return true;
 }
 
+tripoint monster::get_stairs_teleport_point(const tripoint &p) {
+
+    const bool z_move = p.z != pos().z;
+    const bool going_up = p.z > pos().z;
+
+    tripoint destination = p;
+
+    // This is stair teleportation hackery.
+    // @TODO: Remove this in favor of stair alignment
+    if( going_up ) {
+        if( g->m.has_flag( TFLAG_GOES_UP, pos() ) ) {
+            destination = find_closest_stair( p, TFLAG_GOES_DOWN );
+        }
+    } else if( z_move ) {
+        if( g->m.has_flag( TFLAG_GOES_DOWN, pos() ) ) {
+            destination = find_closest_stair( p, TFLAG_GOES_UP );
+        }
+    }
+    return destination;
+}
+
 /**
  * Stumble in a random direction, but with some caveats.
  */
 void monster::stumble()
 {
     // Only move every 10 turns.
-    if( !one_in( 10 ) ) {
-        return;
-    }
+    // if( !one_in( 10 ) ) {
+    //     return;
+    // }
 
     std::vector<tripoint> valid_stumbles;
     valid_stumbles.reserve( 11 );
@@ -1732,6 +1736,7 @@ void monster::stumble()
     if( g->m.has_zlevels() ) {
         tripoint below( posx(), posy(), posz() - 1 );
         tripoint above( posx(), posy(), posz() + 1 );
+        below = get_stairs_teleport_point( below );
         if( g->m.valid_move( pos(), below, false, true ) ) {
             valid_stumbles.push_back( below );
         }

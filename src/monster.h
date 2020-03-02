@@ -211,6 +211,7 @@ class monster : public Creature
 
         bool is_immune_field( field_type_id fid ) const override;
 
+        tripoint get_stairs_teleport_point(const tripoint &p);
         /**
          * Attempt to move to p.
          *
