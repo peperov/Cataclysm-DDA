@@ -10,8 +10,8 @@
 #include "int_id.h"
 #include "json.h"
 #include "line.h"
-#include "map.h"
-#include "map_iterator.h"
+#include "map/map.h"
+#include "map/map_iterator.h"
 #include "player.h"
 #include "string_id.h"
 #include "translations.h"
@@ -110,7 +110,7 @@ void trap::load( const JsonObject &jo, const std::string & )
     // TODO: Is there a generic_factory version of this?
     act = trap_function_from_string( jo.get_string( "action" ) );
 
-    optional( jo, was_loaded, "map_regen", map_regen, "none" );
+    optional( jo, was_loaded, "map/map_regen", map_regen, "none" );
     optional( jo, was_loaded, "benign", benign, false );
     optional( jo, was_loaded, "always_invisible", always_invisible, false );
     optional( jo, was_loaded, "funnel_radius", funnel_radius_mm, 0 );

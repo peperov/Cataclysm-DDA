@@ -19,7 +19,7 @@
 #include "int_id.h"
 #include "cata_io.h"
 #include "kill_tracker.h"
-#include "map.h"
+#include "map/map.h"
 #include "messages.h"
 #include "mission.h"
 #include "mongroup.h"

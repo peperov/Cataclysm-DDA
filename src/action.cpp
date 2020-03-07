@@ -13,9 +13,9 @@
 #include "game.h"
 #include "iexamine.h"
 #include "input.h"
-#include "map.h"
-#include "map_iterator.h"
-#include "mapdata.h"
+#include "map/map.h"
+#include "map/map_iterator.h"
+#include "map/mapdata.h"
 #include "messages.h"
 #include "optional.h"
 #include "options.h"
@@ -294,7 +294,7 @@ std::string action_ident( action_id act )
         case ACTION_PL_INFO:
             return "player_data";
         case ACTION_MAP:
-            return "map";
+            return "map/map";
         case ACTION_SKY:
             return "sky";
         case ACTION_MISSIONS:

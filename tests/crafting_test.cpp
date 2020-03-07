@@ -11,7 +11,7 @@
 #include "catch/catch.hpp"
 #include "game.h"
 #include "itype.h"
-#include "map.h"
+#include "../src/map/map.h"
 #include "map_helpers.h"
 #include "npc.h"
 #include "player_helpers.h"

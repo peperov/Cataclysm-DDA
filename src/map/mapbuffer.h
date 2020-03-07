@@ -7,7 +7,7 @@
 #include <memory>
 #include <string>
 
-#include "point.h"
+#include "../point.h"
 
 class submap;
 class JsonIn;

@@ -15,7 +15,7 @@
 #include "filesystem.h"
 #include "translations.h"
 #include "avatar.h"
-#include "map_extras.h"
+#include "map/map_extras.h"
 #include "generic_factory.h"
 
 namespace auto_notes

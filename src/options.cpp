@@ -13,7 +13,7 @@
 #include "game_constants.h"
 #include "input.h"
 #include "json.h"
-#include "mapsharing.h"
+#include "map/mapsharing.h"
 #include "output.h"
 #include "path_info.h"
 #include "sdlsound.h"

@@ -8,7 +8,7 @@
 #include "item.h"
 #include "item_category.h"
 #include "item_search.h"
-#include "map.h"
+#include "map/map.h"
 #include "options.h"
 #include "output.h"
 #include "player.h"

@@ -15,7 +15,7 @@
 #include "creature.h"
 #include "lightmap.h"
 #include "line.h"
-#include "map_memory.h"
+#include "map/map_memory.h"
 #include "options.h"
 #include "weather.h"
 #include "enums.h"

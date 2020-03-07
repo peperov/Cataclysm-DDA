@@ -3,7 +3,7 @@
 #include <memory>
 
 #include "game.h"
-#include "map.h"
+#include "map/map.h"
 #include "vpart_position.h"
 #include "optional.h"
 

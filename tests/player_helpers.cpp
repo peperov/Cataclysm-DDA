@@ -10,7 +10,7 @@
 #include "itype.h"
 #include "player.h"
 #include "inventory.h"
-#include "map.h"
+#include "../src/map/map.h"
 #include "npc.h"
 #include "player_activity.h"
 #include "type_id.h"

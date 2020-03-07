@@ -12,9 +12,9 @@
 #include "debug.h"
 #include "game.h"
 #include "iexamine.h"
-#include "map.h"
-#include "map_iterator.h"
-#include "mapdata.h"
+#include "map/map.h"
+#include "map/map_iterator.h"
+#include "map/mapdata.h"
 #include "messages.h" //for rust message
 #include "npc.h"
 #include "options.h"

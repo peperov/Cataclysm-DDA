@@ -8,8 +8,8 @@
 #include "field.h"
 #include "game.h"
 #include "item.h"
-#include "map.h"
-#include "map_iterator.h"
+#include "map/map.h"
+#include "map/map_iterator.h"
 #include "rng.h"
 
 projectile::projectile() :

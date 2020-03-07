@@ -6,20 +6,20 @@
 #include <map>
 #include <utility>
 
-#include "calendar.h"
-#include "color.h"
-#include "debug.h"
-#include "generic_factory.h"
-#include "harvest.h"
-#include "iexamine.h"
-#include "item_group.h"
-#include "output.h"
-#include "string_formatter.h"
-#include "translations.h"
-#include "trap.h"
-#include "assign.h"
-#include "json.h"
-#include "cata_string_consts.h"
+#include "../calendar.h"
+#include "../color.h"
+#include "../debug.h"
+#include "../generic_factory.h"
+#include "../harvest.h"
+#include "../iexamine.h"
+#include "../item_group.h"
+#include "../output.h"
+#include "../string_formatter.h"
+#include "../translations.h"
+#include "../trap.h"
+#include "../assign.h"
+#include "../json.h"
+#include "../cata_string_consts.h"
 
 namespace
 {

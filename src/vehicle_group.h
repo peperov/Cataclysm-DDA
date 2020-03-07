@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 
-#include "mapgen.h"
+#include "map/mapgen.h"
 #include "optional.h"
 #include "rng.h"
 #include "string_id.h"

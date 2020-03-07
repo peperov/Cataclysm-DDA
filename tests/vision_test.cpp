@@ -12,7 +12,7 @@
 #include "catch/catch.hpp"
 #include "game.h"
 #include "field.h"
-#include "map.h"
+#include "../src/map/map.h"
 #include "map_helpers.h"
 #include "calendar.h"
 #include "item.h"

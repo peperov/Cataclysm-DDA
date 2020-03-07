@@ -79,7 +79,7 @@
 
 #include "worldfactory.h"
 #include "action.h"
-#include "map.h"
+#include "map/map.h"
 #include "vehicle.h"
 #include "vpart_position.h"
 #include "inventory.h"

@@ -5,7 +5,7 @@
 #include "activity_handlers.h"
 #include "activity_type.h"
 #include "construction.h"
-#include "map.h"
+#include "map/map.h"
 #include "game.h"
 #include "player.h"
 #include "sounds.h"

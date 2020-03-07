@@ -14,7 +14,7 @@
 #include "explosion.h"
 #include "game.h"
 #include "line.h"
-#include "map.h"
+#include "map/map.h"
 #include "messages.h"
 #include "monster.h"
 #include "options.h"

@@ -14,7 +14,7 @@
 #include "cata_utility.h"
 #include "game.h"
 #include "input.h"
-#include "map_selector.h"
+#include "map/map_selector.h"
 #include "npc.h"
 #include "output.h"
 #include "skill.h"

@@ -6,7 +6,7 @@
 #include "debug.h"
 #include "generic_factory.h"
 #include "json.h"
-#include "map_extras.h"
+#include "map/map_extras.h"
 #include "mission.h"
 #include "mutation.h"
 #include "profession.h"
@@ -87,7 +87,7 @@ void scenario::load( const JsonObject &jo, const std::string & )
         jo.throw_error( "at least one starting location (member \"allowed_locs\") must be defined" );
     }
     optional( jo, was_loaded, "flags", flags, auto_flags_reader<> {} );
-    optional( jo, was_loaded, "map_extra", _map_extra, "mx_null" );
+    optional( jo, was_loaded, "map/map_extra", _map_extra, "mx_null" );
     optional( jo, was_loaded, "missions", _missions, auto_flags_reader<mission_type_id> {} );
 }
 

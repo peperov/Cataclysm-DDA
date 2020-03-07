@@ -9,9 +9,9 @@
 #include <vector>
 #include <utility>
 
-#include "regional_settings.h"
-#include "type_id.h"
-#include "memory_fast.h"
+#include "../regional_settings.h"
+#include "../type_id.h"
+#include "../memory_fast.h"
 
 class time_point;
 struct point;

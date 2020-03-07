@@ -10,7 +10,7 @@
 #include "player.h"
 #include "magic_teleporter_list.h"
 #include "calendar.h"
-#include "map_memory.h"
+#include "map/map_memory.h"
 #include "point.h"
 
 enum character_type : int;

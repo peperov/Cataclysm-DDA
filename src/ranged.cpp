@@ -28,7 +28,7 @@
 #include "itype.h"
 #include "line.h"
 #include "magic.h"
-#include "map.h"
+#include "map/map.h"
 #include "messages.h"
 #include "monster.h"
 #include "morale_types.h"

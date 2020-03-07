@@ -10,10 +10,10 @@
 #include "explosion.h"
 #include "timed_event.h"
 #include "game.h"
-#include "map.h"
-#include "mapgen_functions.h"
-#include "map_iterator.h"
-#include "mapdata.h"
+#include "map/map.h"
+#include "map/mapgen_functions.h"
+#include "map/map_iterator.h"
+#include "map/mapdata.h"
 #include "messages.h"
 #include "monster.h"
 #include "mtype.h"
@@ -1447,7 +1447,7 @@ const trap_function &trap_function_from_string( const std::string &function_name
             { "glow", trapfunc::glow },
             { "hum", trapfunc::hum },
             { "shadow", trapfunc::shadow },
-            { "map_regen", trapfunc::map_regen },
+            { "map/map_regen", trapfunc::map_regen },
             { "drain", trapfunc::drain },
             { "snake", trapfunc::snake }
         }

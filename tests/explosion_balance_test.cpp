@@ -10,7 +10,7 @@
 #include "item.h"
 #include "itype.h"
 #include "line.h"
-#include "map.h"
+#include "../src/map/map.h"
 #include "map_helpers.h"
 #include "test_statistics.h"
 #include "vehicle.h"

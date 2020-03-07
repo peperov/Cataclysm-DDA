@@ -2,7 +2,7 @@
 #include <array>
 
 #include "catch/catch.hpp"
-#include "map_iterator.h"
+#include "../src/map/map_iterator.h"
 #include "point.h"
 
 std::array<tripoint, 9> range_1_2d_centered = {

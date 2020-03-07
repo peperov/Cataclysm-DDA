@@ -3,7 +3,7 @@
 #include "avatar.h"
 #include "catch/catch.hpp"
 #include "game.h"
-#include "map.h"
+#include "../src/map/map.h"
 #include "map_helpers.h"
 #include "enums.h"
 #include "game_constants.h"
@@ -29,7 +29,7 @@ TEST_CASE( "destroy_grabbed_furniture" )
     }
 }
 
-TEST_CASE( "map_bounds_checking" )
+TEST_CASE( "map/map_bounds_checking" )
 {
     // FIXME: There are issues with vehicle caching between maps, because
     // vehicles are stored in the global MAPBUFFER which all maps refer to.  To

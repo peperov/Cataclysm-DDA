@@ -17,7 +17,7 @@
 #include "item.h"
 #include "auto_pickup.h"
 #include "json.h"
-#include "map.h"
+#include "map/map.h"
 #include "mission.h"
 #include "npc.h"
 #include "overmap.h"

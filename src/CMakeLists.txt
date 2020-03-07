@@ -6,12 +6,14 @@ SET(RESOURCE_RC ${CMAKE_SOURCE_DIR}/src/resource.rc)
 
 FILE(GLOB CATACLYSM_DDA_SOURCES
     ${CMAKE_SOURCE_DIR}/src/*.cpp
+    ${CMAKE_SOURCE_DIR}/src/map/*.cpp
 )
 
 LIST(REMOVE_ITEM CATACLYSM_DDA_SOURCES ${MAIN_CPP})
 
 FILE(GLOB CATACLYSM_DDA_HEADERS
     ${CMAKE_SOURCE_DIR}/src/*.h
+    ${CMAKE_SOURCE_DIR}/src/map/*.h
 )
 
 # Get GIT version strings

@@ -6,7 +6,7 @@
 #include <array>
 
 #include "basecamp.h"
-#include "mapdata.h"
+#include "map/mapdata.h"
 #include "trap.h"
 #include "tileray.h"
 #include "vehicle.h"

@@ -22,7 +22,7 @@
 #include "ime.h"
 #include "input.h"
 #include "json.h"
-#include "mapsharing.h"
+#include "map/mapsharing.h"
 #include "martialarts.h"
 #include "monster.h"
 #include "mutation.h"

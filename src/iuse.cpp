@@ -38,9 +38,9 @@
 #include "iuse_actor.h" // For firestarter
 #include "json.h"
 #include "line.h"
-#include "map.h"
-#include "map_iterator.h"
-#include "mapdata.h"
+#include "map/map.h"
+#include "map/map_iterator.h"
+#include "map/mapdata.h"
 #include "martialarts.h"
 #include "memorial_logger.h"
 #include "messages.h"

@@ -1,8 +1,8 @@
 #include "mapsharing.h"
 
-#include "cata_utility.h"
-#include "filesystem.h"
-#include "platform_win.h"
+#include "../cata_utility.h"
+#include "../filesystem.h"
+#include "../platform_win.h"
 
 #include <cstdlib>
 #include <stdexcept>

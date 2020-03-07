@@ -12,7 +12,7 @@
 #include "debug.h"
 #include "effect.h"
 #include "game.h"
-#include "map.h"
+#include "map/map.h"
 #include "generic_factory.h"
 #include "input.h"
 #include "itype.h"

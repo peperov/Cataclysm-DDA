@@ -29,7 +29,7 @@
 #include "game.h"
 #include "loading_ui.h"
 #include "main_menu.h"
-#include "mapsharing.h"
+#include "map/mapsharing.h"
 #include "options.h"
 #include "output.h"
 #include "path_info.h"

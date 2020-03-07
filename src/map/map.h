@@ -16,22 +16,22 @@
 #include <string>
 #include <tuple>
 
-#include "calendar.h"
-#include "colony.h"
-#include "enums.h"
-#include "game_constants.h"
-#include "item.h"
-#include "item_stack.h"
-#include "lightmap.h"
-#include "lru_cache.h"
-#include "shadowcasting.h"
-#include "type_id.h"
-#include "units.h"
-#include "cata_utility.h"
-#include "faction.h"
-#include "point.h"
+#include "../calendar.h"
+#include "../colony.h"
+#include "../enums.h"
+#include "../game_constants.h"
+#include "../item.h"
+#include "../item_stack.h"
+#include "../lightmap.h"
+#include "../lru_cache.h"
+#include "../shadowcasting.h"
+#include "../type_id.h"
+#include "../units.h"
+#include "../cata_utility.h"
+#include "../faction.h"
+#include "../point.h"
 #include "mapdata.h"
-#include "vehicle_group.h"
+#include "../vehicle_group.h"
 
 struct furn_t;
 struct ter_t;

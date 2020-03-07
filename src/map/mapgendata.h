@@ -2,9 +2,9 @@
 #ifndef MAPGENDATA_H
 #define MAPGENDATA_H
 
-#include "type_id.h"
-#include "calendar.h"
-#include "weighted_list.h"
+#include "../type_id.h"
+#include "../calendar.h"
+#include "../weighted_list.h"
 
 struct tripoint;
 class mission;

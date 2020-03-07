@@ -5,8 +5,8 @@
 #include <type_traits>
 
 #include "catch/catch.hpp"
-#include "map.h"
-#include "map_memory.h"
+#include "../src/map/map.h"
+#include "../src/map/map_memory.h"
 #include "json.h"
 #include "game_constants.h"
 #include "lru_cache.h"
@@ -16,7 +16,7 @@ static constexpr tripoint p1{ tripoint_above };
 static constexpr tripoint p2{ 0, 0, 2 };
 static constexpr tripoint p3{ 0, 0, 3 };
 
-TEST_CASE( "map_memory_defaults", "[map_memory]" )
+TEST_CASE( "map/map_memory_defaults", "[map_memory]" )
 {
     map_memory memory;
     CHECK( memory.get_symbol( p1 ) == 0 );
@@ -26,7 +26,7 @@ TEST_CASE( "map_memory_defaults", "[map_memory]" )
     CHECK( default_tile.rotation == 0 );
 }
 
-TEST_CASE( "map_memory_remembers", "[map_memory]" )
+TEST_CASE( "map/map_memory_remembers", "[map_memory]" )
 {
     map_memory memory;
     memory.memorize_symbol( 2, p1, 1 );
@@ -35,7 +35,7 @@ TEST_CASE( "map_memory_remembers", "[map_memory]" )
     CHECK( memory.get_symbol( p2 ) == 2 );
 }
 
-TEST_CASE( "map_memory_limited", "[map_memory]" )
+TEST_CASE( "map/map_memory_limited", "[map_memory]" )
 {
     lru_cache<tripoint, int> symbol_cache;
     symbol_cache.insert( 2, p1, 1 );
@@ -44,7 +44,7 @@ TEST_CASE( "map_memory_limited", "[map_memory]" )
     CHECK( symbol_cache.get( p1, 0 ) == 0 );
 }
 
-TEST_CASE( "map_memory_overwrites", "[map_memory]" )
+TEST_CASE( "map/map_memory_overwrites", "[map_memory]" )
 {
     map_memory memory;
     memory.memorize_symbol( 2, p1, 1 );
@@ -54,7 +54,7 @@ TEST_CASE( "map_memory_overwrites", "[map_memory]" )
     CHECK( memory.get_symbol( p2 ) == 3 );
 }
 
-TEST_CASE( "map_memory_erases_lru", "[map_memory]" )
+TEST_CASE( "map/map_memory_erases_lru", "[map_memory]" )
 {
     lru_cache<tripoint, int> symbol_cache;
     symbol_cache.insert( 2, p1, 1 );
@@ -66,7 +66,7 @@ TEST_CASE( "map_memory_erases_lru", "[map_memory]" )
     CHECK( symbol_cache.get( p3, 0 ) == 3 );
 }
 
-TEST_CASE( "map_memory_survives_save_lod", "[map_memory]" )
+TEST_CASE( "map/map_memory_survives_save_lod", "[map_memory]" )
 {
     map_memory memory;
     memory.memorize_symbol( 2, p1, 1 );

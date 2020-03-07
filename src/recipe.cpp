@@ -18,7 +18,7 @@
 #include "character.h"
 #include "construction.h"
 #include "json.h"
-#include "mapgen_functions.h"
+#include "map/mapgen_functions.h"
 #include "optional.h"
 #include "player.h"
 #include "translations.h"

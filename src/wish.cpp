@@ -12,7 +12,7 @@
 #include "game.h"
 #include "input.h"
 #include "item_factory.h"
-#include "map.h"
+#include "map/map.h"
 #include "monster.h"
 #include "monstergenerator.h"
 #include "mtype.h"

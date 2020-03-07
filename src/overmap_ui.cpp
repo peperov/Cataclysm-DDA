@@ -25,8 +25,8 @@
 #include "ime.h"
 #include "input.h"
 #include "line.h"
-#include "map_iterator.h"
-#include "mapbuffer.h"
+#include "map/map_iterator.h"
+#include "map/mapbuffer.h"
 #include "mission.h"
 #include "mongroup.h"
 #include "npc.h"
@@ -57,7 +57,7 @@
 #include "vpart_position.h"
 #include "vehicle.h"
 #include "enums.h"
-#include "map.h"
+#include "map/map.h"
 #include "player_activity.h"
 #include "cata_string_consts.h"
 
@@ -1085,7 +1085,7 @@ void create_note( const tripoint &curs )
     .title_color( c_white )
     .desc_color( c_light_gray )
     .string_color( c_yellow )
-    .identifier( "map_note" );
+    .identifier( "map/map_note" );
 
     update_note_preview( old_note, map_around, preview_windows );
 

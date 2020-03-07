@@ -4,8 +4,8 @@
 
 #include <string>
 
-#include "lru_cache.h"
-#include "point.h" // IWYU pragma: keep
+#include "../lru_cache.h"
+#include "../point.h" // IWYU pragma: keep
 
 class JsonOut;
 class JsonObject;

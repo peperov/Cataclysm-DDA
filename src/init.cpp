@@ -35,9 +35,9 @@
 #include "item_factory.h"
 #include "json.h"
 #include "loading_ui.h"
-#include "mapdata.h"
-#include "map_extras.h"
-#include "mapgen.h"
+#include "map/mapdata.h"
+#include "map/map_extras.h"
+#include "map/mapgen.h"
 #include "martialarts.h"
 #include "material.h"
 #include "mission.h"
@@ -331,13 +331,13 @@ void DynamicDataLoader::initialize()
     add( "overmap_terrain", &overmap_terrains::load );
     add( "construction_category", &construction_categories::load );
     add( "construction", &load_construction );
-    add( "mapgen", &load_mapgen );
+    add( "map/mapgen", &load_mapgen );
     add( "overmap_land_use_code", &overmap_land_use_codes::load );
     add( "overmap_connection", &overmap_connections::load );
     add( "overmap_location", &overmap_locations::load );
     add( "overmap_special", &overmap_specials::load );
     add( "city_building", &city_buildings::load );
-    add( "map_extra", &MapExtras::load );
+    add( "map/map_extra", &MapExtras::load );
 
     add( "region_settings", &load_region_settings );
     add( "region_overlay", &load_region_overlay );

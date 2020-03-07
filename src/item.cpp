@@ -42,7 +42,7 @@
 #include "iteminfo_query.h"
 #include "itype.h"
 #include "iuse_actor.h"
-#include "map.h"
+#include "map/map.h"
 #include "martialarts.h"
 #include "material.h"
 #include "messages.h"

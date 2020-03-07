@@ -25,7 +25,7 @@
 #include "item.h"
 #include "itype.h"
 #include "kill_tracker.h"
-#include "map.h"
+#include "map/map.h"
 #include "martialarts.h"
 #include "messages.h"
 #include "mission.h"
@@ -122,7 +122,7 @@ size_t avatar::max_memorized_tiles() const
     if( current_map_memory_turn != calendar::turn ) {
         current_map_memory_turn = calendar::turn;
         float map_memory_capacity_multiplier =
-            mutation_value( "map_memory_capacity_multiplier" );
+            mutation_value( "map/map_memory_capacity_multiplier" );
         if( has_active_bionic( bio_memory ) ) {
             map_memory_capacity_multiplier = 50;
         }

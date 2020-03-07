@@ -6,7 +6,7 @@
 #include "generic_factory.h"
 #include "item.h"
 #include "json.h"
-#include "map.h"
+#include "map/map.h"
 #include "units.h"
 
 template<>

@@ -8,17 +8,17 @@
 #include <utility>
 #include <vector>
 
-#include "cata_utility.h"
-#include "coordinate_conversions.h"
-#include "debug.h"
-#include "filesystem.h"
-#include "game.h"
-#include "json.h"
+#include "../cata_utility.h"
+#include "../coordinate_conversions.h"
+#include "../debug.h"
+#include "../filesystem.h"
+#include "../game.h"
+#include "../json.h"
 #include "map.h"
-#include "output.h"
-#include "submap.h"
-#include "translations.h"
-#include "game_constants.h"
+#include "../output.h"
+#include "../submap.h"
+#include "../translations.h"
+#include "../game_constants.h"
 
 #define dbg(x) DebugLog((x),D_MAP) << __FILE__ << ":" << __LINE__ << ": "
 
@@ -99,7 +99,7 @@ submap *mapbuffer::lookup_submap( int x, int y, int z )
 
 submap *mapbuffer::lookup_submap( const tripoint &p )
 {
-    dbg( D_INFO ) << "mapbuffer::lookup_submap( x[" << p.x << "], y[" << p.y << "], z[" << p.z << "])";
+    dbg( D_INFO ) << "map/mapbuffer::lookup_submap( x[" << p.x << "], y[" << p.y << "], z[" << p.z << "])";
 
     const auto iter = submaps.find( p );
     if( iter == submaps.end() ) {
@@ -255,8 +255,8 @@ submap *mapbuffer::unserialize_submaps( const tripoint &p )
     if( !file_exist( quad_path ) ) {
         // Fix for old saves where the path was generated using std::stringstream, which
         // did format the number using the current locale. That formatting may insert
-        // thousands separators, so the resulting path is "map/1,234.7.8.map" instead
-        // of "map/1234.7.8.map".
+        // thousands separators, so the resulting path is "map/map/1,234.7.8.map" instead
+        // of "map/map/1234.7.8.map".
         std::ostringstream buffer;
         buffer << dirname << "/" << om_addr.x << "." << om_addr.y << "." << om_addr.z << ".map";
         if( file_exist( buffer.str() ) ) {

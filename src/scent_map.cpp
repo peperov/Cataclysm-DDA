@@ -9,7 +9,7 @@
 #include "color.h"
 #include "game.h"
 #include "generic_factory.h"
-#include "map.h"
+#include "map/map.h"
 #include "output.h"
 #include "cursesdef.h"
 

@@ -13,9 +13,9 @@
 #include "fragment_cloud.h" // IWYU pragma: keep
 #include "game.h"
 #include "math_defines.h"
-#include "map.h"
-#include "map_iterator.h"
-#include "mapdata.h"
+#include "map/map.h"
+#include "map/map_iterator.h"
+#include "map/mapdata.h"
 #include "monster.h"
 #include "mtype.h"
 #include "npc.h"

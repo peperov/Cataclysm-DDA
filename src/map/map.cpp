@@ -10,79 +10,79 @@
 #include <queue>
 #include <unordered_map>
 
-#include "ammo.h"
-#include "ammo_effect.h"
-#include "artifact.h"
-#include "avatar.h"
-#include "calendar.h"
-#include "colony.h"
-#include "coordinate_conversions.h"
-#include "clzones.h"
-#include "debug.h"
-#include "drawing_primitives.h"
-#include "emit.h"
-#include "event_bus.h"
-#include "explosion.h"
-#include "fragment_cloud.h"
-#include "fungal_effects.h"
-#include "game.h"
-#include "harvest.h"
-#include "iexamine.h"
-#include "item.h"
-#include "item_factory.h"
-#include "item_group.h"
-#include "iuse_actor.h"
-#include "lightmap.h"
-#include "line.h"
+#include "../ammo.h"
+#include "../ammo_effect.h"
+#include "../artifact.h"
+#include "../avatar.h"
+#include "../calendar.h"
+#include "../colony.h"
+#include "../coordinate_conversions.h"
+#include "../clzones.h"
+#include "../debug.h"
+#include "../drawing_primitives.h"
+#include "../emit.h"
+#include "../event_bus.h"
+#include "../explosion.h"
+#include "../fragment_cloud.h"
+#include "../fungal_effects.h"
+#include "../game.h"
+#include "../harvest.h"
+#include "../iexamine.h"
+#include "../item.h"
+#include "../item_factory.h"
+#include "../item_group.h"
+#include "../iuse_actor.h"
+#include "../lightmap.h"
+#include "../line.h"
 #include "map_iterator.h"
-#include "map_selector.h"
+#include "map/map_selector.h"
 #include "mapbuffer.h"
-#include "messages.h"
-#include "mongroup.h"
-#include "monster.h"
-#include "morale_types.h"
-#include "mtype.h"
-#include "options.h"
-#include "output.h"
-#include "overmapbuffer.h"
-#include "pathfinding.h"
-#include "projectile.h"
-#include "rng.h"
-#include "safe_reference.h"
-#include "scent_map.h"
-#include "sounds.h"
-#include "string_formatter.h"
-#include "submap.h"
-#include "timed_event.h"
-#include "translations.h"
-#include "trap.h"
-#include "veh_type.h"
-#include "vehicle.h"
-#include "vpart_position.h"
-#include "vpart_range.h"
-#include "weather.h"
-#include "active_item_cache.h"
-#include "basecamp.h"
-#include "bodypart.h"
-#include "character.h"
-#include "color.h"
-#include "creature.h"
-#include "cursesdef.h"
-#include "damage.h"
-#include "field.h"
-#include "item_location.h"
-#include "itype.h"
-#include "iuse.h"
+#include "../messages.h"
+#include "../mongroup.h"
+#include "../monster.h"
+#include "../morale_types.h"
+#include "../mtype.h"
+#include "../options.h"
+#include "../output.h"
+#include "../overmapbuffer.h"
+#include "../pathfinding.h"
+#include "../projectile.h"
+#include "../rng.h"
+#include "../safe_reference.h"
+#include "../scent_map.h"
+#include "../sounds.h"
+#include "../string_formatter.h"
+#include "../submap.h"
+#include "../timed_event.h"
+#include "../translations.h"
+#include "../trap.h"
+#include "../veh_type.h"
+#include "../vehicle.h"
+#include "../vpart_position.h"
+#include "../vpart_range.h"
+#include "../weather.h"
+#include "../active_item_cache.h"
+#include "../basecamp.h"
+#include "../bodypart.h"
+#include "../character.h"
+#include "../color.h"
+#include "../creature.h"
+#include "../cursesdef.h"
+#include "../damage.h"
+#include "../field.h"
+#include "../item_location.h"
+#include "../itype.h"
+#include "../iuse.h"
 #include "map_memory.h"
-#include "math_defines.h"
-#include "optional.h"
-#include "tileray.h"
-#include "weighted_list.h"
-#include "enums.h"
-#include "int_id.h"
-#include "string_id.h"
-#include "construction.h"
-#include "flat_set.h"
+#include "../math_defines.h"
+#include "../optional.h"
+#include "../tileray.h"
+#include "../weighted_list.h"
+#include "../enums.h"
+#include "../int_id.h"
+#include "../string_id.h"
+#include "../construction.h"
+#include "../flat_set.h"
 
 static const mtype_id mon_zombie( "mon_zombie" );
 
@@ -138,7 +138,7 @@ map::map( int mapsize, bool zlev )
         ptr = std::make_unique<pathfinding_cache>();
     }
 
-    dbg( D_INFO ) << "map::map(): my_MAPSIZE: " << my_MAPSIZE << " z-levels enabled:" << zlevels;
+    dbg( D_INFO ) << "map/map::map(): my_MAPSIZE: " << my_MAPSIZE << " z-levels enabled:" << zlevels;
     traplocs.resize( trap::count() );
 }
 
@@ -293,7 +293,7 @@ void map::update_vehicle_list( const submap *const to, const int zlev )
 std::unique_ptr<vehicle> map::detach_vehicle( vehicle *veh )
 {
     if( veh == nullptr ) {
-        debugmsg( "map::detach_vehicle was passed nullptr" );
+        debugmsg( "map/map::detach_vehicle was passed nullptr" );
         return std::unique_ptr<vehicle>();
     }
 
@@ -941,7 +941,7 @@ vehicle *map::veh_at_internal( const tripoint &p, int &part_num )
 void map::board_vehicle( const tripoint &pos, player *p )
 {
     if( p == nullptr ) {
-        debugmsg( "map::board_vehicle: null player" );
+        debugmsg( "map/map::board_vehicle: null player" );
         return;
     }
 
@@ -949,13 +949,13 @@ void map::board_vehicle( const tripoint &pos, player *p )
             true );
     if( !vp ) {
         if( p->grab_point.x == 0 && p->grab_point.y == 0 ) {
-            debugmsg( "map::board_vehicle: vehicle not found" );
+            debugmsg( "map/map::board_vehicle: vehicle not found" );
         }
         return;
     }
     if( vp->part().has_flag( vehicle_part::passenger_flag ) ) {
         player *psg = vp->vehicle().get_passenger( vp->part_index() );
-        debugmsg( "map::board_vehicle: passenger (%s) is already there",
+        debugmsg( "map/map::board_vehicle: passenger (%s) is already there",
                   psg ? psg->name : "<null>" );
         unboard_vehicle( pos );
     }
@@ -978,7 +978,7 @@ void map::unboard_vehicle( const vpart_reference &vp, player *passenger, bool de
 
     if( !passenger ) {
         if( !dead_passenger ) {
-            debugmsg( "map::unboard_vehicle: passenger not found" );
+            debugmsg( "map/map::unboard_vehicle: passenger not found" );
         }
         return;
     }
@@ -995,7 +995,7 @@ void map::unboard_vehicle( const tripoint &p, bool dead_passenger )
     const cata::optional<vpart_reference> vp = veh_at( p ).part_with_feature( VPFLAG_BOARDABLE, false );
     player *passenger = nullptr;
     if( !vp ) {
-        debugmsg( "map::unboard_vehicle: vehicle not found" );
+        debugmsg( "map/map::unboard_vehicle: vehicle not found" );
         // Try and force unboard the player anyway.
         passenger = g->critter_at<player>( p );
         if( passenger ) {
@@ -1016,7 +1016,7 @@ bool map::displace_vehicle( vehicle &veh, const tripoint &dp )
     const tripoint dst = p2;
 
     if( !inbounds( src ) ) {
-        add_msg( m_debug, "map::displace_vehicle: coordinates out of bounds %d,%d,%d->%d,%d,%d",
+        add_msg( m_debug, "map/map::displace_vehicle: coordinates out of bounds %d,%d,%d->%d,%d,%d",
                  src.x, src.y, src.z, dst.x, dst.y, dst.z );
         return false;
     }
@@ -1053,7 +1053,7 @@ bool map::displace_vehicle( vehicle &veh, const tripoint &dp )
     if( !inbounds( p2 ) ) {
         veh.stop();
         // Silent debug
-        dbg( D_ERROR ) << "map:displace_vehicle: Stopping vehicle, displaced dp=("
+        dbg( D_ERROR ) << "map/map:displace_vehicle: Stopping vehicle, displaced dp=("
                        << dp.x << ", " << dp.y << ", " << dp.z << ")";
         return true;
     }
@@ -2502,7 +2502,7 @@ void map::decay_fields_and_scent( const time_duration &amount )
             if( to_proc < 1 ) {
                 if( to_proc < 0 ) {
                     cur_submap->field_count = 0;
-                    dbg( D_ERROR ) << "map::decay_fields_and_scent: submap at "
+                    dbg( D_ERROR ) << "map/map::decay_fields_and_scent: submap at "
                                    << abs_sub.x + smx << "," << abs_sub.y + smy << "," << abs_sub.z
                                    << "has " << to_proc << " field_count";
                 }
@@ -2542,7 +2542,7 @@ void map::decay_fields_and_scent( const time_duration &amount )
 
             if( to_proc > 0 ) {
                 cur_submap->field_count = cur_submap->field_count - to_proc;
-                dbg( D_ERROR ) << "map::decay_fields_and_scent: submap at "
+                dbg( D_ERROR ) << "map/map::decay_fields_and_scent: submap at "
                                << abs_sub.x + smx << "," << abs_sub.y + smy << "," << abs_sub.z
                                << "has " << cur_submap->field_count - to_proc << "fields, but "
                                << cur_submap->field_count << " field_count";
@@ -2908,7 +2908,7 @@ ter_id map::get_roof( const tripoint &p, const bool allow_air )
 
     ter_id new_ter = roof.id();
     if( new_ter == t_null ) {
-        debugmsg( "map::get_new_floor: %d,%d,%d has invalid roof type %s",
+        debugmsg( "map/map::get_new_floor: %d,%d,%d has invalid roof type %s",
                   p.x, p.y, p.z, roof.c_str() );
         return t_dirt;
     }
@@ -3748,7 +3748,7 @@ bool map::open_door( const tripoint &p, const bool inside, const bool check_only
 void map::translate( const ter_id &from, const ter_id &to )
 {
     if( from == to ) {
-        debugmsg( "map::translate %s => %s",
+        debugmsg( "map/map::translate %s => %s",
                   from.obj().name(),
                   from.obj().name() );
         return;
@@ -3765,7 +3765,7 @@ void map::translate_radius( const ter_id &from, const ter_id &to, float radi, co
                             const bool same_submap, const bool toggle_between )
 {
     if( from == to ) {
-        debugmsg( "map::translate %s => %s", from.obj().name(), to.obj().name() );
+        debugmsg( "map/map::translate %s => %s", from.obj().name(), to.obj().name() );
         return;
     }
 
@@ -6395,7 +6395,7 @@ void map::shift( const point &sp )
     }
 
     if( abs( sp.x ) > 1 || abs( sp.y ) > 1 ) {
-        debugmsg( "map::shift called with a shift of more than one submap" );
+        debugmsg( "map/map::shift called with a shift of more than one submap" );
     }
 
     const tripoint abs = get_abs_sub();
@@ -6540,14 +6540,14 @@ void map::vertical_shift( const int newz )
 // in grid[0].
 void map::saven( const tripoint &grid )
 {
-    dbg( D_INFO ) << "map::saven(worldx[" << abs_sub.x << "], worldy[" << abs_sub.y << "], worldz[" <<
+    dbg( D_INFO ) << "map/map::saven(worldx[" << abs_sub.x << "], worldy[" << abs_sub.y << "], worldz[" <<
                   abs_sub.z
                   << "], gridx[" << grid.x << "], gridy[" << grid.y << "], gridz[" << grid.z << "])";
     const int gridn = get_nonant( grid );
     submap *submap_to_save = getsubmap( gridn );
     if( submap_to_save == nullptr || submap_to_save->get_ter( point_zero ) == t_null ) {
         // This is a serious error and should be signaled as soon as possible
-        debugmsg( "map::saven grid (%d,%d,%d) %s!", grid.x, grid.y, grid.z,
+        debugmsg( "map/map::saven grid (%d,%d,%d) %s!", grid.x, grid.y, grid.z,
                   submap_to_save == nullptr ? "null" : "uninitialized" );
         return;
     }
@@ -6559,7 +6559,7 @@ void map::saven( const tripoint &grid )
                   abs.x, abs.y, abs_sub.z, abs.x, abs.y, grid.z );
     }
 
-    dbg( D_INFO ) << "map::saven abs: " << abs
+    dbg( D_INFO ) << "map/map::saven abs: " << abs
                   << "  gridn: " << gridn;
     submap_to_save->last_touched = calendar::turn;
     MAPBUFFER.add_submap( abs, submap_to_save );
@@ -6589,13 +6589,13 @@ void map::loadn( const tripoint &grid, const bool update_vehicles )
     static const oter_id rock( "empty_rock" );
     static const oter_id air( "open_air" );
 
-    dbg( D_INFO ) << "map::loadn(game[" << g.get() << "], worldx[" << abs_sub.x
+    dbg( D_INFO ) << "map/map::loadn(game[" << g.get() << "], worldx[" << abs_sub.x
                   << "], worldy[" << abs_sub.y << "], grid " << grid << ")";
 
     const tripoint grid_abs_sub = abs_sub.xy() + grid;
     const size_t gridn = get_nonant( grid );
 
-    dbg( D_INFO ) << "map::loadn grid_abs_sub: " << grid_abs_sub << "  gridn: " << gridn;
+    dbg( D_INFO ) << "map/map::loadn grid_abs_sub: " << grid_abs_sub << "  gridn: " << gridn;
 
     const int old_abs_z = abs_sub.z; // Ugly, but necessary at the moment
     abs_sub.z = grid.z;
@@ -6603,7 +6603,7 @@ void map::loadn( const tripoint &grid, const bool update_vehicles )
     submap *tmpsub = MAPBUFFER.lookup_submap( grid_abs_sub );
     if( tmpsub == nullptr ) {
         // It doesn't exist; we must generate it!
-        dbg( D_INFO | D_WARNING ) << "map::loadn: Missing mapbuffer data.  Regenerating.";
+        dbg( D_INFO | D_WARNING ) << "map/map::loadn: Missing mapbuffer data.  Regenerating.";
 
         // Each overmap square is two nonants; to prevent overlap, generate only at
         //  squares divisible by 2.
@@ -6942,7 +6942,7 @@ void map::produce_sap( const tripoint &p, const time_duration &time_since_last_a
         return;
     }
 
-    item sap( "maple_sap", calendar::turn );
+    item sap( "map/maple_sap", calendar::turn );
 
     sap.set_item_temperature( temp_to_kelvin( g->m.get_temperature( p ) ) );
 

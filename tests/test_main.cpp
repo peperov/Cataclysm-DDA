@@ -34,7 +34,7 @@
 #include "filesystem.h"
 #include "game.h"
 #include "loading_ui.h"
-#include "map.h"
+#include "../src/map/map.h"
 #include "overmap.h"
 #include "overmapbuffer.h"
 #include "path_info.h"

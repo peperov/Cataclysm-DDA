@@ -9,7 +9,7 @@
 #include <vector>
 
 #include "string_id.h"
-#include "map_extras.h"
+#include "map/map_extras.h"
 
 namespace auto_notes
 {

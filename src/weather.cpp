@@ -15,7 +15,7 @@
 #include "game.h"
 #include "game_constants.h"
 #include "line.h"
-#include "map.h"
+#include "map/map.h"
 #include "messages.h"
 #include "options.h"
 #include "overmap.h"

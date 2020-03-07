@@ -28,7 +28,7 @@
 #include "filesystem.h"
 #include "game.h"
 #include "game_inventory.h"
-#include "map_extras.h"
+#include "map/map_extras.h"
 #include "messages.h"
 #include "mission.h"
 #include "morale_types.h"
@@ -57,7 +57,7 @@
 #include "pldata.h"
 #include "translations.h"
 #include "type_id.h"
-#include "map.h"
+#include "map/map.h"
 #include "veh_type.h"
 #include "weather.h"
 #include "recipe_dictionary.h"
@@ -86,7 +86,7 @@
 #include "weather_gen.h"
 #include "monstergenerator.h"
 #include "cata_string_consts.h"
-#include "mapgendata.h"
+#include "map/mapgendata.h"
 
 class vehicle;
 

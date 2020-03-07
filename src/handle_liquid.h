@@ -5,7 +5,7 @@
 #include <list>
 
 #include "item_location.h"
-#include "map.h"
+#include "map/map.h"
 #include "item.h"
 #include "item_stack.h"
 #include "point.h"

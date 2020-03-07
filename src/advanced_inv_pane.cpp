@@ -28,7 +28,7 @@
 #include "ime.h"
 #include "advanced_inv_pane.h"
 #include "vehicle.h"
-#include "map.h"
+#include "map/map.h"
 
 #include <algorithm>
 #include <cassert>

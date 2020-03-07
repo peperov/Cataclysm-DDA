@@ -7,7 +7,7 @@
 #include <functional>
 #include <utility>
 
-#include "type_id.h"
+#include "../type_id.h"
 
 struct tripoint;
 struct point;

@@ -30,7 +30,7 @@
 #include "cata_utility.h"
 #include "game_constants.h"
 #include "item.h"
-#include "mapdata.h"
+#include "map/mapdata.h"
 
 class npc;
 

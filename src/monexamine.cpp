@@ -17,7 +17,7 @@
 #include "item.h"
 #include "itype.h"
 #include "iuse.h"
-#include "map.h"
+#include "map/map.h"
 #include "messages.h"
 #include "monster.h"
 #include "mtype.h"

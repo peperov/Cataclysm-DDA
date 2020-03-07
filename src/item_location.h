@@ -5,7 +5,7 @@
 #include <memory>
 #include <string>
 
-#include "map_selector.h"
+#include "map/map_selector.h"
 
 struct tripoint;
 class item;

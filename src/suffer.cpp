@@ -29,7 +29,7 @@
 #include "itype.h"
 #include "iuse_actor.h"
 #include "magic.h"
-#include "map.h"
+#include "map/map.h"
 #include "material.h"
 #include "math_defines.h"
 #include "messages.h"

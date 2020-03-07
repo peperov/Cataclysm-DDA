@@ -18,7 +18,7 @@
 #include "generic_factory.h"
 #include "inventory.h"
 #include "json.h"
-#include "map.h"
+#include "map/map.h"
 #include "messages.h"
 #include "monster.h"
 #include "mutation.h"
@@ -220,7 +220,7 @@ void spell_type::load( const JsonObject &jo, const std::string & )
         { "explosion", spell_effect::explosion },
         { "flashbang", spell_effect::flashbang },
         { "mod_moves", spell_effect::mod_moves },
-        { "map", spell_effect::map },
+        { "map/map", spell_effect::map },
         { "morale", spell_effect::morale },
         { "charm_monster", spell_effect::charm_monster },
         { "mutate", spell_effect::mutate },

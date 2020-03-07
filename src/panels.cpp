@@ -23,7 +23,7 @@
 #include "input.h"
 #include "item.h"
 #include "json.h"
-#include "map.h"
+#include "map/map.h"
 #include "martialarts.h"
 #include "options.h"
 #include "messages.h"

@@ -11,7 +11,7 @@
 #include "avatar.h"
 #include "catch/catch.hpp"
 #include "game.h"
-#include "map.h"
+#include "../src/map/map.h"
 #include "options_helpers.h"
 #include "options.h"
 #include "player.h"
@@ -21,7 +21,7 @@
 #include "player_activity.h"
 #include "type_id.h"
 #include "item_location.h"
-#include "map_selector.h"
+#include "../src/map/map_selector.h"
 #include "point.h"
 #include "visitable.h"
 

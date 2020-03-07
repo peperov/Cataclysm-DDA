@@ -12,7 +12,7 @@
 #include "avatar.h"
 #include "calendar.h"
 #include "game.h"
-#include "map.h"
+#include "map/map.h"
 #include "player.h"
 #include "veh_type.h"
 #include "vehicle.h"

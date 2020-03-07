@@ -9,13 +9,13 @@
 #include <vector>
 #include <string>
 
-#include "color.h"
-#include "int_id.h"
-#include "optional.h"
-#include "string_id.h"
-#include "translations.h"
-#include "type_id.h"
-#include "units.h"
+#include "../color.h"
+#include "../int_id.h"
+#include "../optional.h"
+#include "../string_id.h"
+#include "../translations.h"
+#include "../type_id.h"
+#include "../units.h"
 
 class JsonObject;
 struct itype;

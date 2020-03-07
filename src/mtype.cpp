@@ -10,7 +10,7 @@
 #include "mondeath.h"
 #include "monstergenerator.h"
 #include "translations.h"
-#include "mapdata.h"
+#include "map/mapdata.h"
 #include "cata_string_consts.h"
 
 mtype::mtype()

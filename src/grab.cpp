@@ -4,7 +4,7 @@
 #include <algorithm>
 
 #include "avatar.h"
-#include "map.h"
+#include "map/map.h"
 #include "messages.h"
 #include "sounds.h"
 #include "vehicle.h"

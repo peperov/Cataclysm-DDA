@@ -9,7 +9,7 @@
 #include "ammo.h"
 #include "game.h"
 #include "itype.h"
-#include "map.h"
+#include "../src/map/map.h"
 #include "veh_type.h"
 #include "vehicle.h"
 #include "item.h"

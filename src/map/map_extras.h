@@ -6,9 +6,9 @@
 #include <string>
 #include <unordered_map>
 
-#include "catacharset.h"
-#include "color.h"
-#include "string_id.h"
+#include "../catacharset.h"
+#include "../color.h"
+#include "../string_id.h"
 
 class JsonObject;
 class map;

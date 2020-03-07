@@ -5,8 +5,8 @@
 #include "game.h"
 #include "generic_factory.h"
 #include "magic.h"
-#include "map.h"
-#include "mapdata.h"
+#include "map/map.h"
+#include "map/mapdata.h"
 #include "messages.h"
 #include "type_id.h"
 

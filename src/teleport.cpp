@@ -5,7 +5,7 @@
 #include "creature.h"
 #include "player.h"
 #include "game.h"
-#include "map.h"
+#include "map/map.h"
 #include "messages.h"
 #include "point.h"
 #include "cata_string_consts.h"

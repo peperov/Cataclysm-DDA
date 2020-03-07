@@ -12,7 +12,7 @@
 #include "faction.h"
 #include "field.h"
 #include "game.h"
-#include "map.h"
+#include "../src/map/map.h"
 #include "map_helpers.h"
 #include "npc.h"
 #include "npc_class.h"

@@ -5,7 +5,7 @@
 #include "avatar.h"
 #include "catch/catch.hpp"
 #include "game.h"
-#include "map.h"
+#include "../src/map/map.h"
 #include "vehicle.h"
 #include "type_id.h"
 #include "point.h"

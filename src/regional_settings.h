@@ -10,7 +10,7 @@
 #include <set>
 
 #include "enums.h"
-#include "mapdata.h"
+#include "map/mapdata.h"
 #include "omdata.h"
 #include "weather_gen.h"
 #include "weighted_list.h"

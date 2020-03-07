@@ -7,8 +7,8 @@
 
 #include "avatar.h"
 #include "game.h"
-#include "map.h"
-#include "mapdata.h"
+#include "../src/map/map.h"
+#include "../src/map/mapdata.h"
 #include "monster.h"
 #include "npc.h"
 #include "field.h"

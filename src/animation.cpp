@@ -2,7 +2,7 @@
 
 #include "avatar.h"
 #include "game.h"
-#include "map.h"
+#include "map/map.h"
 #include "monster.h"
 #include "mtype.h"
 #include "options.h"

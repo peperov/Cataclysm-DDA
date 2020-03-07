@@ -9,7 +9,7 @@
 
 #include "catch/catch.hpp"
 #include "line.h" // For rl_dist.
-#include "map.h"
+#include "../src/map/map.h"
 #include "rng.h"
 #include "shadowcasting.h"
 #include "game_constants.h"

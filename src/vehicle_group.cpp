@@ -6,7 +6,7 @@
 
 #include "debug.h"
 #include "json.h"
-#include "map.h"
+#include "map/map.h"
 #include "translations.h"
 #include "vehicle.h"
 #include "vpart_position.h"

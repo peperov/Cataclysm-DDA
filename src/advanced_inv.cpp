@@ -13,8 +13,8 @@
 #include "item_category.h"
 #include "item_search.h"
 #include "item_stack.h"
-#include "map.h"
-#include "mapdata.h"
+#include "map/map.h"
+#include "map/mapdata.h"
 #include "messages.h"
 #include "options.h"
 #include "output.h"
@@ -44,7 +44,7 @@
 #include "enums.h"
 #include "faction.h"
 #include "item_location.h"
-#include "map_selector.h"
+#include "map/map_selector.h"
 #include "pimpl.h"
 
 #include <algorithm>

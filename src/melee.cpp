@@ -21,8 +21,8 @@
 #include "game_inventory.h"
 #include "itype.h"
 #include "line.h"
-#include "map.h"
-#include "map_iterator.h"
+#include "map/map.h"
+#include "map/map_iterator.h"
 #include "martialarts.h"
 #include "messages.h"
 #include "monattack.h"
@@ -55,7 +55,7 @@
 #include "projectile.h"
 #include "vehicle.h"
 #include "vpart_position.h"
-#include "mapdata.h"
+#include "map/mapdata.h"
 
 static const bionic_id bio_cqb( "bio_cqb" );
 static const bionic_id bio_memory( "bio_memory" );

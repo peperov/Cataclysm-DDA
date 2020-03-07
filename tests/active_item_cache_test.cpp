@@ -2,7 +2,7 @@
 #include "enums.h"
 #include "game.h"
 #include "item.h"
-#include "map.h"
+#include "../src/map/map.h"
 #include "map_helpers.h"
 #include "submap.h"
 

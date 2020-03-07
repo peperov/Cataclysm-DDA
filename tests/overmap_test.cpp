@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "catch/catch.hpp"
-#include "map.h"
+#include "../src/map/map.h"
 #include "overmap.h"
 #include "overmapbuffer.h"
 #include "calendar.h"
